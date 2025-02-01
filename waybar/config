@@ -15,7 +15,7 @@
         "~/.config/waybar/modules.json"
     ],    
     "modules-left": [
-        "custom/appmenu",
+        "clock",
         "group/quicklinks",
         "hyprland/window"
     ],
@@ -28,8 +28,7 @@
         "backlight",
         "pulseaudio", 
         "network",  
-        "battery", 
-        "clock", 
+        "battery",  
         "tray",
         "idle_inhibitor",
 	"custom/swaync",

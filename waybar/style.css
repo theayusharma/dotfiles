@@ -238,7 +238,7 @@ window#waybar.empty #window {
     font-size: 16px;
     color: @textcolor1;
     border-radius: 15px;
-    margin: 10px 10px 10px 0px;
+    margin: 10px 10px 10px 13px;
 }
 
 /* -----------------------------------------------------
