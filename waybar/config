@@ -30,6 +30,7 @@
         "network",  
         "battery",  
         "tray",
+        "custom/hyprshade",
         "idle_inhibitor",
 	"custom/swaync",
         "custom/exit"

@@ -144,6 +144,9 @@ window#waybar.empty #window {
     margin-right: 0;
 }
 
+#custom-hyprshade{
+    margin-left:7px;
+}
 /* -----------------------------------------------------
  * Custom Quicklinks
  * ----------------------------------------------------- */

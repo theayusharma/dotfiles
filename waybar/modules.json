@@ -85,6 +85,13 @@
         "format": "",
         "tooltip": false
     },
+    //hyprshadeee
+    "custom/hyprshade": {
+    "format": "",
+    "tooltip-format": "Toggle Screen Shader",
+    "on-click": "sleep 0.5; ~/.config/broconfig/scripts/hyprshade.sh",
+    "on-click-right": "sleep 0.5; ~/.config/broconfig/scripts/hyprshade.sh rofi"
+  },
 
     
    // Network
