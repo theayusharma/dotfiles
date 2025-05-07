@@ -12,7 +12,7 @@ else
         keyword decoration:blur:enabled 0;\
         keyword general:gaps_in 0;\
         keyword general:gaps_out 0;\
-        keyword general:border_size 0;\
+        keyword general:border_size 0;\	
         keyword decoration:rounding 0;\
         keyword monitor eDP-1,1920x1080@60.00hz,auto,1;\
         keyword monitor HDMI-A-1,1920x1080@60.00hz,auto,1"
