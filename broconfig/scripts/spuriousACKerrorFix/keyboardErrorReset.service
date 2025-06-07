@@ -1,0 +1,5 @@
+[Unit] Description=Reset i8042 controller on Spurious ACK error After=network.target
+
+[Service] Type=simple ExecStart=/home/catisgoal/.config/broconfig/scripts/spuriousACKerrorFix/keyboardErrorReset.sh Restart=on-failure StandardOutput=journal StandardError=journal
+
+[Install] WantedBy=multi-user.target

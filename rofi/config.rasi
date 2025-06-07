@@ -18,15 +18,18 @@
     color4:     #02A4D2;
     color5:     #01AFEE;
     color6:     #01D3D2;
-    color7:     #77e8e1;
+    // color7:     #77e8e1;
+    color7:     #bd93f9;
     color8:     #53a29d;
     color9:     #056F93;
     color10:    #039AA5;
-    color11:    #02C2BC;
+    // color11:    #02C2BC;
+    color11:    #bd93f9;
     color12:    #02A4D2;
     color13:    #01AFEE;
     color14:    #01D3D2;
-    color15:    #77e8e1;
+    // color15:    #77e8e1;
+    color15:    #bd93f9;
 }
 
 * { border-width: 3px; }
@@ -35,7 +38,7 @@
 configuration {
     modi:                       "drun,run";
     font:                       "Fira Sans 11";
-    show-icons:                 false;
+    show-icons:                 true;
     icon-theme:                 "kora";
     display-drun:               "APPS";
     display-run:                "RUN";

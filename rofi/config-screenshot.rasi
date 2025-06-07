@@ -1,0 +1,132 @@
+* {
+    background: rgba(0,0,1,0.5);
+    foreground: #FFFFFF;
+    color0:     #0A121B;
+    color1:     #056F93;
+    color2:     #039AA5;
+    color3:     #02C2BC;
+    color4:     #02A4D2;
+    color5:     #01AFEE;
+    color6:     #01D3D2;
+    // color7:     #77e8e1;
+    color7:     #bd93f9;
+    color8:     #53a29d;
+    color9:     #056F93;
+    color10:    #039AA5;
+    // color11:    #02C2BC;
+    color11:    #bd93f9;
+    color12:    #02A4D2;
+    color13:    #01AFEE;
+    color14:    #01D3D2;
+    // color15:    #77e8e1;
+    color15:    #bd93f9;
+    border-width: 3px;
+}
+
+/* ---- Configuration ---- */
+configuration {
+    font: "Fira Sans 11";
+    show-icons: false;
+    scroll-method: 1;
+	animation-duration : 0;
+    // me-accept-entry: "MousePrimary";
+    drun-display-format: "{name}";
+    window-format: "{w} · {c} · {t}";
+    prompt: "";
+}
+
+/* ---- Window ---- */
+window {
+    width: 600px;
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    enabled: true;
+    border: @border-width;
+    border-color: #ffffff;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    enabled: true;
+    orientation: vertical;
+    background-color: @background;
+    children: ["listbox"];
+}
+
+/* ---- Listbox ---- */
+listbox {
+    spacing: 10px;
+    background-color: transparent;
+    orientation: vertical;
+    children: ["listview"];
+}
+
+/* ---- Listview ---- */
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 8;
+    cycle: false;
+    dynamic: false;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 0px;
+    padding: 10px;
+    margin: 0px;
+    background-color: @background;
+    border: 0px;
+}
+
+/* ---- Element ---- */
+element {
+    enabled: true;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: @background;
+    border-radius: 10px;
+    border: @border-width;
+}
+
+element normal.normal,
+element alternate.normal,
+element normal.urgent,
+element alternate.urgent,
+element normal.active,
+element alternate.active {
+    background-color: inherit;
+    text-color: @foreground;
+}
+
+element selected.normal,
+element selected.urgent,
+element selected.active {
+    background-color: @color11;
+    text-color: @foreground;
+}
+
+element-icon,
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+}
+
+element-icon {
+    size: 32px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
