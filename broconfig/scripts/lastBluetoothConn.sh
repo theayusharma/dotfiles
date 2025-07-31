@@ -1,12 +1,8 @@
 #!/bin/bash
-
-LATEST_DEVICE=$(bluetoothctl devices | tail -n 1 | awk '{print $2}')
+bluetoothctl power on
+sleep 0.5
+LATEST_DEVICE="2C:BE:EB:DA:79:26"
 LATEST_DEVICE_NAME=$(bluetoothctl info "$LATEST_DEVICE" | grep "Name" | cut -d ' ' -f2-)
-
-if [ -z "$LATEST_DEVICE" ]; then
-    echo "No Bluetooth devices found."
-    exit 1
-fi
 
 if bluetoothctl connect "$LATEST_DEVICE"; then
     sleep 1

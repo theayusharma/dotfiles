@@ -110,10 +110,12 @@ tooltip {
 #tray,
 #workspaces,
 #taskbar,
-#idle_inhibitor,
+#custom-nolockcat,
 #language,
 #custom-l_end,
-#custom-r_end {
+#custom-r_end,
+#custom-clock_l_end,
+#custom-clock_r_end {
     color: @main-fg;
     background: @main-bg;
     opacity: 1;
@@ -122,14 +124,42 @@ tooltip {
     padding-right: 4px;
 }
 
-#clock{
-    color:rgba(128, 200, 255, 1);
+
+#custom-weather {
+    color: @main-fg;
     background: @main-bg;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    margin: 4px 0px 4px 0px;
+}
+
+#idle_inhibitor{
+
+    color: @main-fg;
     opacity: 1;
-	font-size : 16px;
     margin: 4px 0px 4px 0px;
     padding-left: 4px;
     padding-right: 4px;
+}
+#clock {
+    color: rgb(198, 160, 246);
+    background: @main-bg;
+    /* opacity: 1; */
+    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    margin: 4px 0;
+padding: 0 0px;
+}
+#custom-clock_r_end {
+    border-radius: 0px 21px 21px 0px;
+    margin-right: 9px;
+padding: 0 5px;
+}
+
+#custom-clock_l_end {
+    border-radius: 21px 0px 0px 21px;
+    margin-left: 9px;
+padding: 0 5px;
 }
 #system-info {
 	background: @main-bg;
@@ -168,4 +198,10 @@ tooltip {
 #custom-padd_bg {
     background: @main-bg;
     margin: 4px 0px 4px 0px;
+}
+
+#custom-headphone-battery {
+  color: #bd93f9; /* Dracula Purple */
+  font-weight: bold;
+  font-family: "JetBrainsMono Nerd Font", monospace;
 }

@@ -163,7 +163,7 @@
 
     // Idle Inhibator
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon}dd",
         "tooltip": true,
         "format-icons":{
             "activated": "",

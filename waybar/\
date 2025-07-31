@@ -9,16 +9,17 @@
     "reload_style_on_change": true,
 
     //==> Modules Layout
-    "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end" ], 
+    ///////////////////////////////////////////////////////////////
+	"modules-left": [
+		"custom/l_end","tray","custom/r_end","custom/l_end","hyprland/workspaces","custom/r_end","custom/l_end","wlr/taskbar","custom/r_end"
+	],
 	"modules-center": [
 		// "custom/l_end","idle_inhibitor","clock","custom/r_end"
-		"custom/clock_l_end","custom/nolockcat","clock","custom/clock_r_end"
+		"custom/clock_l_end","idle_inhibitor","clock","custom/clock_r_end"
 	],
 	"modules-right": [
-		
-		"custom/clock_l_end","custom/weather","custom/clock_r_end",
-        // "custom/l_end","custom/r_en
 		"group/system-levels","custom/padd",
+		// "custom/l_end","idle_inhibitor","clock","custom/r_end",
         // "custom/l_end","custom/r_en
 		"group/control-panel", "custom/padd"
 	],
@@ -28,21 +29,19 @@
 			"battery",
 			"backlight",
 				"pulseaudio",
-			"custom/microphone",
-			"custom/headphone-battery"
+			"custom/microphone"
 		]
 	},
 	"group/control-panel": {
 		"orientation": "horizontal",
 		"modules": [
-			"idle_inhibitor",
+			"custom/nolock",
 			"custom/swaync",
 			"custom/bluetooth",
 			"network",
 			"custom/power"
 		]
 	},
-
         
     //==> Left Modules
     ///////////////////////////////////////////////////////////////
@@ -83,9 +82,9 @@
     ///////////////////////////////////////////////////////////////
     
 "clock": {
-    "format": "{:%I:%M %p %a  %B %d %Y}", // replaced 󰃭 with  for better alignment
+    "format": "{:%I:%M %p    %a %e %b}", // replaced 󰃭 with  for better alignment
     "rotate": 0,
-    "format-alt": "{:%I:%M %p  %d·%m·%y}", // same change in alt format
+    "format-alt": "{:%I:%M %p |  %d·%m·%y}", // same change in alt format
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
         "mode": "month",
@@ -105,8 +104,9 @@
         "on-scroll-up": "shift_up",
         "on-scroll-down": "shift_down"
     }
-},
-    "custom/nolockcat": {
+}
+,
+    "idle_inhibitor": {
 		"on-click" : "hyprshade on blue-20 ",
 		"on-click-right": "hyprshade off",
         "format": "{icon}",
@@ -116,14 +116,14 @@
             "deactivated": " "
         }
     },
-	"idle_inhibitor":{
-        "format": "{icon}  ",
+	"custom/nolock":{
+        "format": "{icon}",
         "tooltip": true,
         "format-icons":{
             "activated": "",
             "deactivated": ""
         },
-        "on-click-right": "gtklock"        
+        "on-click-right": "hyprlock"        
 	},
 
     "battery": {
@@ -144,7 +144,9 @@
 
 "pulseaudio": {
     "format": "<span color='#cba6f7'>{icon}  </span> {volume}%",
-    "format-bluetooth": "<span color='#cba6f7'> {icon}</span>   {volume}%", "format-bluetooth-muted": "<span color='#f38ba8'></span> <span color='#cba6f7'>{icon}</span> ", "format-muted": "<span color='#f38ba8'></span>",
+    "format-bluetooth": "<span color='#cba6f7'> {icon}</span>   {volume}%",
+    "format-bluetooth-muted": "<span color='#f38ba8'></span> <span color='#cba6f7'>{icon}</span> ",
+    "format-muted": "<span color='#f38ba8'></span>",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -179,16 +181,7 @@
     ],
     "scroll-step": 5
   },
-   
-
-"custom/headphone-battery": {
-  "exec": "$HOME/.local/bin/waybar-bluetooth-headphone-battery --listen -r 5m",
-  "return-type": "json",
-  "format": " 󰋋 {percentage}% {icon}",
-  "format-icons": ["", "", "", "", ""],
-}
-
-,
+	
     
 "custom/microphone": {
     "exec": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo '<span color=\"#f38ba8\">  </span>' || echo '<span color=\"#a6e3a1\"> </span>'",
@@ -218,14 +211,14 @@
         "<span color='#94e2d5'>   </span>",  // 51–75% - Teal
         "<span color='#a6e3a1'>   </span>"   // 76–100% - Green
     ],
-    "format-ethernet": "<span color=\"#a6e3a1\">     </span>",
+    "format-ethernet": "<span color=\"#a6e3a1\">  </span>",
     "format-disconnected": "<span color=\"#f38ba8\">   Disconnected </span>",
     "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-wifi": "    {essid}({signalStrength}%)",
     "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
     "tooltip-format-disconnected": "Disconnected ",
     "interval": 15,
-    "on-click": "nm-applet"
+    "on-click": "nm-connection-editor"
 },
 
     "custom/power": {
@@ -236,15 +229,15 @@
     },
 	"custom/swaync": {
     "tooltip": false,
-    "format": "{icon}  ",
+    "format": "{icon}    ",
     "format-icons": {
-        "notification": "<span color='#f9e2af'></span><span foreground='#f38ba8'><sup>  </sup></span>",               // Yellow bell + Red dot
+        "notification": "<span color='#f9e2af'></span><span foreground='#f38ba8'><sup></sup></span>",               // Yellow bell + Red dot
         "none": "<span color='#f9e2af'></span>",                                                                  // Yellow bell
-        "dnd-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup>  </sup></span>",       // Teal dnd + Red dot
+        "dnd-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup></sup></span>",       // Teal dnd + Red dot
         "dnd-none": "<span color='#94e2d5'></span>",                                                              // Teal dnd
-        "inhibited-notification": "<span color='#a6e3a1'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Green bell + Red dot
+        "inhibited-notification": "<span color='#a6e3a1'></span><span foreground='#f38ba8'><sup></sup></span>", // Green bell + Red dot
         "inhibited-none": "<span color='#a6e3a1'></span>",                                                        // Green bell
-        "dnd-inhibited-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Teal dnd + Red dot
+        "dnd-inhibited-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup></sup></span>", // Teal dnd + Red dot
         "dnd-inhibited-none": "<span color='#94e2d5'></span>"
     },
     "return-type": "json",
@@ -255,43 +248,7 @@
     "escape": true
 },
 
-
-"custom/weather": {
-  // "exec": "wttrbar --nerd --custom-indicator {temp_C}°C{ICON}{FeelsLikeC} --location indore ",
-  "exec": "wttrbar --nerd --location indore ",
-  "return-type": "json",
-  "interval": 3600,
-  "tooltip": true,
-  "format": "{}°C",
-  // "format": "{main_indicator} {temperature}°C • feels like {feels_like_c}°C",
-  "format-icons": {
-    "default": "",
-    "clear-night": "",
-    "cloudy": "",
-    "fog": "",
-    "heavy-rain": "",
-    "heavy-showers": "",
-    "heavy-snow": "",
-    "heavy-snow-showers": "",
-    "light-rain": "🌦",
-    "light-showers": "🌦",
-    "light-sleet": "",
-    "light-sleet-showers": "",
-    "light-snow": "",
-    "light-snow-showers": "",
-    "partly-cloudy": "",
-    "rain": "",
-    "showers": "🌦",
-    "sleet": "",
-    "snow": "",
-    "sunny": "",
-    "thundery-heavy-rain": "",
-    "thundery-showers": "",
-    "thundery-snow-showers": "",
-    "very-cloudy": ""
-  }
-}	
-,
+	
     //==> Other Modules
     ///////////////////////////////////////////////////////////////
     "custom/l_end": {
