@@ -5,8 +5,18 @@
 !hypr/
 !kitty/
 !rofi/
-!tmux/
 !waybar/
 !wlogout/
 !wofi/
-
+!niri/
+!sway/
+!swaylock/
+!swaync/
+!sunsetr/
+!auto-epp-rs/ #amd cpu freq tune, battery saverrrrrrrrrrrr
+#my ffishhhh
+fish/*
+!fish/config.fish
+!fish/functions/
+!fish/completions/
+!fish/abbrs.fish
