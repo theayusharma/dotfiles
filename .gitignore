@@ -20,3 +20,5 @@ fish/*
 !fish/functions/
 !fish/completions/
 !fish/abbrs.fish
+
+!ghostty/
