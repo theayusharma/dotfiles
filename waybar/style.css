@@ -9,7 +9,7 @@
 * {
     border: none;
     border-radius: 0px;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "JetBrains Nerd Font";
     font-weight: bold;
     font-size: 12px;
     min-height: 10px;
@@ -128,7 +128,7 @@ tooltip {
 #custom-weather {
     color: @main-fg;
     background: @main-bg;
-    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-family: "JetBrains Nerd Font",monospace;
     font-size: 13px;
     margin: 4px 0px 4px 0px;
 }
@@ -146,8 +146,10 @@ tooltip {
     background: @main-bg;
     /* opacity: 1; */
     font-size: 16px;
-    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-family: "JetBrainsMono Nerd",monospace;
+   font-weight: bold;  
     margin: 4px 0;
+
 padding: 0 0px;
 }
 #custom-clock_r_end {
@@ -203,5 +205,5 @@ padding: 0 5px;
 #custom-headphone-battery {
   color: #bd93f9; /* Dracula Purple */
   font-weight: bold;
-  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-family: "JetBrains Nerd Font",monospace;
 }

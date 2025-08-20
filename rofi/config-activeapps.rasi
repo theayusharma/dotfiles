@@ -9,27 +9,25 @@
     color4:     #02A4D2;
     color5:     #01AFEE;
     color6:     #01D3D2;
-    // color7:     #77e8e1;
     color7:     #bd93f9;
     color8:     #53a29d;
     color9:     #056F93;
     color10:    #039AA5;
-    // color11:    #02C2BC;
     color11:    #bd93f9;
     color12:    #02A4D2;
     color13:    #01AFEE;
     color14:    #01D3D2;
-    // color15:    #77e8e1;
     color15:    #bd93f9;
     border-width: 3px;
 }
 
 /* ---- Configuration ---- */
 configuration {
-    modi: "drun,run";
+    modi: "window,drun,run";
     font: "Fira Sans 11";
     show-icons: true;
     icon-theme: "kora";
+    window-thumbnail: true;
     display-drun: "APPS";
     display-run: "RUN";
     display-filebrowser: "FILES";
@@ -39,7 +37,7 @@ configuration {
     me-select-entry: "";
     me-accept-entry: "MousePrimary";
     drun-display-format: "{name}";
-    window-format: "{w} · {c} · {t}";
+    window-format: "{c}: {t}";
 }
 
 /* ---- Window ---- */
@@ -78,7 +76,7 @@ imagebox {
     padding: 18px;
     background-color: transparent;
     orientation: vertical;
-    children: ["mode-switcher"];
+    children: [ "mode-switcher" ];
 }
 
 /* ---- Listbox ---- */
@@ -133,7 +131,7 @@ listview {
     cycle: false;
     dynamic: false;
     scrollbar: false;
-    layout: horizontal;
+    layout: vertical;
     reverse: false;
     fixed-height: false;
     fixed-columns: false;
@@ -146,6 +144,7 @@ listview {
 
 /* ---- Element ---- */
 element {
+    orientation: horizontal;
     enabled: true;
     padding: 20px 10px;
     margin: 5px;
@@ -153,9 +152,7 @@ element {
     background-color: @background;
     border-radius: 10px;
     border: @border-width;
-    min-width: 400px;
-    min-height: 200px;
-    children: ["element-icon", "element-text"];
+    children: [ "element-icon", "element-text" ];
 }
 
 element normal.normal,
@@ -187,13 +184,13 @@ element-text {
 }
 
 element-icon {
-    size: 32px;
+    size: 128px;
+    border: 0px;
 }
 
 element-text {
     vertical-align: 0.5;
     horizontal-align: 0.0;
-    // word-wrap: break-word;
     width: 20%;
 }
 
@@ -215,7 +212,6 @@ textbox {
     text-color: @foreground;
     vertical-align: 0.5;
     horizontal-align: 0.0;
-    // word-wrap: break-word;
     width: 100%;
 }
 

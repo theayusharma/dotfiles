@@ -1,0 +1,12 @@
+*
+!.gitignore
+!alacritty/
+!broconfig/
+!hypr/
+!kitty/
+!rofi/
+!tmux/
+!waybar/
+!wlogout/
+!wofi/
+
