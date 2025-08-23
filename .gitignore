@@ -20,5 +20,5 @@ fish/*
 !fish/functions/
 !fish/completions/
 !fish/abbrs.fish
-
+starship.toml
 !ghostty/
