@@ -21,4 +21,4 @@ fish/*
 !fish/completions/
 !fish/abbrs.fish
 starship.toml
-!ghostty/*
+!ghostty/config
