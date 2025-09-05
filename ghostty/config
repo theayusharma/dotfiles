@@ -1,0 +1,27 @@
+#font-family = JetBrains Mono Medium   # Medium weight for softer look
+# theme = dracula
+#font-family = FiraCode Nerd Font Medium
+#font-family = Fira Code Retina 
+font-family = Fira Code Medium
+font-size = 12
+#
+# # Background and foreground colors (override theme for a ghostly touch)
+# background = 1e222a
+# foreground = e6e6e6
+#
+background-opacity = 0.80
+cursor-style = block
+# font-thicken = true
+# # Keybindings (custom actions leveraging Ghostty's flexibility)
+# keybind = ctrl+shift+t=new_tab
+# keybind = ctrl+shift+w=close_surface
+# keybind = ctrl+shift+n=new_window
+# keybind = ctrl+z=ignore  # Black-hole ctrl+z to prevent accidental suspend
+# # Bell behavior (disable audible bell for a silent ghost)
+# bell = none
+# # Window settings
+# window-decoration = true
+# window-theme = ghostty resize-overlay-duration = 4s 200ms
+#
+shell-integration = fish
+# theme = catppuccin-frappe
