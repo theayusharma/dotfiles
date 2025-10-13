@@ -209,23 +209,26 @@ padding: 0 5px;
   font-family: "JetBrains Nerd Font",monospace;
 }
 
-   #custom-music {
-       background-color: #2a2a2a;
-       color: #ffffff;
-       padding: 0 15px;
-       border-radius: 10px;
-       margin: 2px 3px;
-       transition: all 0.3s ease-in-out;
-   }
-
-    #custom-music.playing {
-        color: #a3be8c; /* Green */
-    }
-    
-    #custom-music.paused {
-        color: #ebcb8b; /* Yellow */
-    }
-    
-    #custom-music.stopped {
-        color: #bf616a; /* Red */
-    }
+   /* #custom-music { */
+   /*     background-color: #2a2a2a; */
+   /*     color: #ffffff; */
+   /*     padding: 0 15px; */
+   /*     border-radius: 10px; */
+   /*     margin: 2px 3px; */
+   /*     transition: all 0.3s ease-in-out; */
+   /* } */
+   /**/
+   /*  #custom-music.playing { */
+   /*      color: #a3be8c;  */
+   /*  } */
+   /*   */
+   /*  #custom-music.paused { */
+   /*      color: #ebcb8b; */
+   /*  } */
+   /*   */
+   /*  #custom-music.stopped { */
+   /*      color: #bf616a; */
+   /*  } */
+#backlight, #battery, #pulseaudio{
+  color:@main-fg
+}
