@@ -7,8 +7,8 @@ if [ -f ~/.cache/PowerSavermode ]; then
     notify-send "Smooth Catisgoal!" "120hz refreshrate enabled"
 else
     hyprctl --batch "
-        keyword monitor eDP-1,1920x1080@60.00hz,auto,1;
-        keyword monitor HDMI-A-1,1920x1080@60.00hz,auto,1;
+        keyword monitor eDP-1,1920x1080@60.00hz,0x0,1;
+        keyword monitor HDMI-A-1,1920x1080@60.00hz,0x-1080,1;
         keyword animations:enabled 0;
 		
 		keyword decoration:drop_shadow 0;

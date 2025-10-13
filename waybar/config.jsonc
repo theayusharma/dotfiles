@@ -9,7 +9,8 @@
     "reload_style_on_change": true,
 
     //==> Modules Layout
-    "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end" ], 
+    "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end"], 
+    // "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end","custom/music" ], 
 	"modules-center": [
 		// "custom/l_end","idle_inhibitor","clock","custom/r_end"
 		"custom/clock_l_end","custom/nolockcat","clock","custom/clock_r_end"
@@ -28,8 +29,8 @@
 			"battery",
 			"backlight",
 				"pulseaudio",
-			"custom/microphone",
-			"custom/headphone-battery"
+			"custom/microphone"
+			// "custom/headphone-battery"
 		]
 	},
 	"group/control-panel": {
@@ -43,7 +44,23 @@
 		]
 	},
 
-        
+/* for wayybar music bar attemp2 */
+  // "custom/music": {
+  //       "format": "{}",
+  //       "return-type": "json",
+  //       "exec": "/home/catisgoal/project/waybarMusic/waybar-music/build/waybar-music",
+  //       "on-click": "playerctl play-pause"
+  //   },
+/* for wayybar music bar attemp2 */
+
+/* for wayybar music bar attemp3 thius work */
+  // "custom/music": {
+  //       "format": "{}",
+  //       "return-type": "json",
+  //       "exec": "/home/catisgoal/project/waybarMusic/attemp3/main",
+  //       "on-click": "playerctl play-pause"
+  //   },
+/* for wayybar music bar attemp3 */
     //==> Left Modules
     ///////////////////////////////////////////////////////////////
     "tray": {
@@ -181,14 +198,14 @@
   },
    
 
-"custom/headphone-battery": {
-  "exec": "$HOME/.local/bin/waybar-bluetooth-headphone-battery --listen -r 5m",
-  "return-type": "json",
-  "format": " 󰋋 {percentage}% {icon}",
-  "format-icons": ["", "", "", "", ""],
-}
+// "custom/headphone-battery": {
+//   "exec": "$HOME/.local/bin/waybar-bluetooth-headphone-battery --listen -r 5m",
+//   "return-type": "json",
+//   "format": " 󰋋 {percentage}% {icon}",
+//   "format-icons": ["", "", "", "", ""],
+// }
 
-,
+// ,
     
 "custom/microphone": {
     "exec": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo '<span color=\"#f38ba8\">  </span>' || echo '<span color=\"#a6e3a1\"> </span>'",
@@ -262,7 +279,9 @@
   "return-type": "json",
   "interval": 3600,
   "tooltip": true,
-  "format": "{}°C",
+    "unit": "metric",
+  // "format": "{icon} {temperature}°C",
+  "format" : "{text}°C",
   // "format": "{main_indicator} {temperature}°C • feels like {feels_like_c}°C",
   "format-icons": {
     "default": "",

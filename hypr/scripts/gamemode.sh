@@ -7,19 +7,18 @@
 #
 #
 
-if [ -f ~/.cache/gamemode ] ;then
-    hyprctl reload
-    rm ~/.cache/gamemode
-    notify-send "Gamemode deactivated" "Animations and blur enabled"
+#!/bin/bash
+
+FAST=~/.config/broconfig/moodFast.conf
+SLOW=~/.config/broconfig/moodChill.conf
+CURRENT=~/.config/broconfig/moodFast.conf
+
+if cmp -s "$FAST" "$CURRENT"; then
+    cp "$SLOW" "$CURRENT"
+    notify-send "Hyprland" "Switched to slow animations"
 else
-    hyprctl --batch "\
-        keyword animations:enabled 0;\
-        keyword decoration:drop_shadow 0;\
-        keyword decoration:blur:enabled 0;\
-        keyword general:gaps_in 0;\
-        keyword general:gaps_out 0;\
-        keyword general:border_size 1;\
-        keyword decoration:rounding 0"
-	touch ~/.cache/gamemode
-    notify-send "Gamemode activated" "Animations and blur disabled"
+    cp "$FAST" "$CURRENT"
+    notify-send "Hyprland" "Switched to fast animations"
 fi
+
+hyprctl reload
