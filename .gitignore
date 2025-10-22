@@ -22,3 +22,4 @@ fish/*
 !fish/abbrs.fish
 starship.toml
 !ghostty/config
+!README.md
