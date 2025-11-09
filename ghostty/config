@@ -1,16 +1,28 @@
 #font-family = JetBrains Mono Medium   # Medium weight for softer look
 # theme = dracula
-#font-family = FiraCode Nerd Font Medium
+font-family = FiraCode Nerd Font SemBd
+gtk-tabs-location = hidden
+scrollback-limit = 10_000
+window-decoration = false
 #font-family = Fira Code Retina 
-font-family = Fira Code Medium
+# font-family = FiraCode Ner
 font-size = 12
+title=""
+window-padding-x = 0
+window-padding-y = 0
+# window-padding-color = extend
 #
 # # Background and foreground colors (override theme for a ghostly touch)
 # background = 1e222a
 # foreground = e6e6e6
-#
+
+background-blur = false
 background-opacity = 0.80
 cursor-style = block
+cursor-style-blink = false
+
+clipboard-read = allow
+clipboard-write = allow
 # font-thicken = true
 # # Keybindings (custom actions leveraging Ghostty's flexibility)
 # keybind = ctrl+shift+t=new_tab
@@ -24,4 +36,7 @@ cursor-style = block
 # window-theme = ghostty resize-overlay-duration = 4s 200ms
 #
 shell-integration = fish
+
+gtk-single-instance = detect
+gtk-wide-tabs = false
 # theme = catppuccin-frappe

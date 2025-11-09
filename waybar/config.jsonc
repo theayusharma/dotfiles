@@ -100,7 +100,8 @@
     ///////////////////////////////////////////////////////////////
     
 "clock": {
-    "format": " {:%I:%M %p %a  %B·%d·%Y}", // replaced 󰃭 with  for better alignment
+    "format": "{:%I:%M %p %a  %B·%d}", // replaced 󰃭 with  for better alignment
+    // i dont want year anymore "format": " {:%I:%M %p %a  %B·%d·%Y}", // replaced 󰃭 with  for better alignment
     "rotate": 0,
     "format-alt": "{:%I:%M %p  %d·%m·%y}", // same change in alt format
     "tooltip-format": "<tt>{calendar}</tt>",
