@@ -144,6 +144,7 @@ handle_post_actions() {
 }
 
 takescreenshot() {
+    local geometry="$1"
     local output_file="$screenshot_folder/$NAME"
     mkdir -p "$screenshot_folder" || {
         notify-send -u critical "Error" "Failed to create directory $screenshot_folder"
@@ -160,10 +161,17 @@ takescreenshot() {
             grim -o "$(hyprctl -j monitors | jq -r '.[] | select(.focused) | .name')" "$output_file"
             ;;
         area)
-            grim -g "$(slurp -d)" "$output_file" || {
-                notify-send -u critical "Error" "Failed to capture area screenshot"
-                exit 1
-            }
+            if [[ -n "$geometry" ]]; then
+                grim -g "$geometry" "$output_file" || {
+                    notify-send -u critical "Error" "Failed to capture area screenshot"
+                    exit 1
+                }
+            else
+                grim -g "$(slurp -d)" "$output_file" || {
+                    notify-send -u critical "Error" "Failed to capture area screenshot"
+                    exit 1
+                }
+            fi
             ;;
     esac
 
@@ -176,8 +184,15 @@ takescreenshot() {
 }
 
 takescreenshot_timer() {
-    timer
-    takescreenshot
+    if [[ "$option_type_screenshot" == "area" ]]; then
+        local geometry
+        geometry=$(slurp -d) || { notify-send -u critical "Error" "Selection cancelled"; exit 1; }
+        timer
+        takescreenshot "$geometry"
+    else
+        timer
+        takescreenshot
+    fi
 }
 
 run_cmd() {
