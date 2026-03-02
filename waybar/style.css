@@ -8,10 +8,18 @@
 /* @import url("file://$HOME/.cache/wal/colors-waybar.css"); */
 @import url("file:///home/catisgoal/.cache/wal/colors-waybar.css");
 
-@define-color bar-bg rgba(30,30,46,0);
-@define-color main-bg alpha(@background, 0.2);
-@define-color main-fg @foreground;
-@define-color wb-act-bg @foreground;
+/* @define-color bar-bg alpha(@color13,0.6); */
+/* @define-color main-bg alpha(@background, 0.9); */
+/* @define-color main-fg alpha(#ffffff,0.9); */
+/* @define-color wb-act-bg alpha(@color14,0.8); */
+/* @define-color wb-act-fg rgba(0,0,0,0.7); */
+/* @define-color wb-hvr-bg @color8; */
+/* @define-color wb-hvr-fg @color14; */
+/**/
+@define-color bar-bg alpha(#060520,0.3);
+@define-color main-bg alpha(#05201E, 1);
+@define-color main-fg alpha(#34FBF0,0.7);
+@define-color wb-act-bg alpha(#FB65BC,0.8);
 @define-color wb-act-fg rgba(0,0,0,0.7);
 @define-color wb-hvr-bg @color8;
 @define-color wb-hvr-fg @color14;
@@ -154,7 +162,7 @@ tooltip {
 }
 #clock {
     /* color: rgb(198, 160, 246); */
-    color: @foreground;
+    color: @main-fg;
     background: @main-bg;
     /* opacity: 1; */
     font-size: 16px;

@@ -9,58 +9,74 @@
     "reload_style_on_change": true,
 
     //==> Modules Layout
-    "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end"], 
-    // "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end","custom/music" ], 
-	"modules-center": [
-		// "custom/l_end","idle_inhibitor","clock","custom/r_end"
-		"custom/clock_l_end","custom/nolockcat","clock","custom/clock_r_end"
-	],
-	"modules-right": [
-		
-		"custom/clock_l_end","custom/weather","custom/clock_r_end",
+    "modules-left": [
+        "custom/clock_l_end",
+        "tray",
+        "custom/clock_r_end",
+        "custom/clock_l_end",
+        "hyprland/workspaces",
+        "custom/clock_r_end",
+        "custom/clock_l_end",
+        "wlr/taskbar",
+        "custom/clock_r_end"
+    ],
+    // "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end","custom/music" ],
+    "modules-center": [
+        // "custom/l_end","idle_inhibitor","clock","custom/r_end"
+        "custom/clock_l_end",
+        "custom/nolockcat",
+        "clock",
+        "custom/clock_r_end"
+    ],
+    "modules-right": [
+        "custom/clock_l_end",
+        "custom/weather",
+        "custom/clock_r_end",
         // "custom/l_end","custom/r_en
-		"group/system-levels","custom/padd",
+        "group/system-levels",
+        "custom/padd",
         // "custom/l_end","custom/r_en
-		"group/control-panel", "custom/padd"
-	],
-	"group/system-levels": {
-		"orientation": "horizontal",
-		"modules": [
-			"battery",
-			"backlight",
-				"pulseaudio",
-			"custom/microphone"
-			// "custom/headphone-battery"
-		]
-	},
-	"group/control-panel": {
-		"orientation": "horizontal",
-		"modules": [
-			"idle_inhibitor",
-			"custom/swaync",
-			"custom/bluetooth",
-			"network",
-			"custom/power"
-		]
-	},
+        "group/control-panel",
+        "custom/padd"
+    ],
+    "group/system-levels": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "backlight",
+            "pulseaudio",
+            "custom/microphone"
+            // "custom/headphone-battery"
+        ]
+    },
+    "group/control-panel": {
+        "orientation": "horizontal",
+        "modules": [
+            "idle_inhibitor",
+            "custom/swaync",
+            "custom/bluetooth",
+            "network",
+            "custom/power"
+        ]
+    },
 
-/* for wayybar music bar attemp2 */
-  // "custom/music": {
-  //       "format": "{}",
-  //       "return-type": "json",
-  //       "exec": "/home/catisgoal/project/waybarMusic/waybar-music/build/waybar-music",
-  //       "on-click": "playerctl play-pause"
-  //   },
-/* for wayybar music bar attemp2 */
+    /* for wayybar music bar attemp2 */
+    // "custom/music": {
+    //       "format": "{}",
+    //       "return-type": "json",
+    //       "exec": "/home/catisgoal/project/waybarMusic/waybar-music/build/waybar-music",
+    //       "on-click": "playerctl play-pause"
+    //   },
+    /* for wayybar music bar attemp2 */
 
-/* for wayybar music bar attemp3 thius work */
-  // "custom/music": {
-  //       "format": "{}",
-  //       "return-type": "json",
-  //       "exec": "/home/catisgoal/project/waybarMusic/attemp3/main",
-  //       "on-click": "playerctl play-pause"
-  //   },
-/* for wayybar music bar attemp3 */
+    /* for wayybar music bar attemp3 thius work */
+    // "custom/music": {
+    //       "format": "{}",
+    //       "return-type": "json",
+    //       "exec": "/home/catisgoal/project/waybarMusic/attemp3/main",
+    //       "on-click": "playerctl play-pause"
+    //   },
+    /* for wayybar music bar attemp3 */
     //==> Left Modules
     ///////////////////////////////////////////////////////////////
     "tray": {
@@ -78,55 +94,53 @@
         "on-scroll-down": "hyprctl dispatch workspace +1",
         "persistent-workspaces": {}
     },
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"rotate": 0,
-		"icon-size": 18,
-		"icon-theme": "Tela-circle-dracula",
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "rotate": 0,
+        "icon-size": 18,
+        "icon-theme": "Tela-circle-dracula",
         "spacing": 0,
-		"tooltip-format": "{title}",
-		"on-click": "activate",
-		"on-click-middle": "close",
-		"app_ids-mapping": {
-			"firefoxdeveloperedition": "firefox-developer-edition"
-		}
-	},
-
-
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        }
+    },
 
     //==> Middle Modules
     ///////////////////////////////////////////////////////////////
     //==> Right Modules
     ///////////////////////////////////////////////////////////////
-    
-"clock": {
-    "format": "{:%I:%M %p %a  %B·%d}", // replaced 󰃭 with  for better alignment
-    // i dont want year anymore "format": " {:%I:%M %p %a  %B·%d·%Y}", // replaced 󰃭 with  for better alignment
-    "rotate": 0,
-    "format-alt": "{:%I:%M %p  %d·%m·%y}", // same change in alt format
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-        "mode": "month",
-        "mode-mon-col": 3,
-        "on-scroll": 1,
-        "on-click-right": "mode",
-        "format": {
-            "months": "<span color='#ffead3'><b>{}</b></span>",
-            "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-            "today": "<span color='#ff6699'><b>{}</b></span>"
+
+    "clock": {
+        "format": "{:%I:%M %p %a  %B·%d}", // replaced 󰃭 with  for better alignment
+        // i dont want year anymore "format": " {:%I:%M %p %a  %B·%d·%Y}", // replaced 󰃭 with  for better alignment
+        "rotate": 0,
+        "format-alt": "{:%I:%M %p  %d·%m·%y}", // same change in alt format
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
         }
     },
-    "actions": {
-        "on-click-right": "mode",
-        "on-click-forward": "tz_up",
-        "on-click-backward": "tz_down",
-        "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
-    }
-},
     "custom/nolockcat": {
-		"on-click" : "hyprshade on blue-20 ",
-		"on-click-right": "hyprshade off",
+        "on-click": "hyprshade on blue-20 ",
+        "on-click-right": "hyprshade off",
         "format": "{icon}",
         "rotate": 0,
         "format-icons": {
@@ -134,15 +148,15 @@
             "deactivated": " "
         }
     },
-	"idle_inhibitor":{
+    "idle_inhibitor": {
         "format": "{icon}  ",
         "tooltip": true,
-        "format-icons":{
+        "format-icons": {
             "activated": "",
             "deactivated": ""
         },
-        "on-click-right": "gtklock"        
-	},
+        "on-click-right": "gtklock"
+    },
 
     "battery": {
         "states": {
@@ -158,66 +172,65 @@
         // "format-full": "",
         "format-icons": [" ", " ", " ", " ", " "]
     },
-    
 
-"pulseaudio": {
-    "format": "<span color='#cba6f7'>{icon}  </span> {volume}%",
-    "format-bluetooth": "<span color='#cba6f7'> {icon}</span>   {volume}%", "format-bluetooth-muted": "<span color='#f38ba8'></span> <span color='#cba6f7'>{icon}</span> ", "format-muted": "<span color='#f38ba8'></span>",
-    "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", "", ""]
+    "pulseaudio": {
+        "format": "<span color='#cba6f7'>{icon}  </span> {volume}%",
+        "format-bluetooth": "<span color='#cba6f7'> {icon}</span>   {volume}%",
+        "format-bluetooth-muted": "<span color='#f38ba8'></span> <span color='#cba6f7'>{icon}</span> ",
+        "format-muted": "<span color='#f38ba8'></span>",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol"
     },
-      "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol"
-}
-,	
-"backlight": {
-    "format": "{icon}  {percent}%  ",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "scroll-step": 5
-  },
-   
+    "backlight": {
+        "format": "{icon}  {percent}%  ",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "scroll-step": 5
+    },
 
-// "custom/headphone-battery": {
-//   "exec": "$HOME/.local/bin/waybar-bluetooth-headphone-battery --listen -r 5m",
-//   "return-type": "json",
-//   "format": " 󰋋 {percentage}% {icon}",
-//   "format-icons": ["", "", "", "", ""],
-// }
+    // "custom/headphone-battery": {
+    //   "exec": "$HOME/.local/bin/waybar-bluetooth-headphone-battery --listen -r 5m",
+    //   "return-type": "json",
+    //   "format": " 󰋋 {percentage}% {icon}",
+    //   "format-icons": ["", "", "", "", ""],
+    // }
 
-// ,
-    
-"custom/microphone": {
-    "exec": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo '<span color=\"#f38ba8\">  </span>' || echo '<span color=\"#a6e3a1\"> </span>'",
-    "return-type": "text",
-    "interval": 30,
-    "format": "{}",
-    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
-    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
-    "tooltip": false
-},
+    // ,
+
+    "custom/microphone": {
+        "exec": "pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo '<span color=\"#f38ba8\">  </span>' || echo '<span color=\"#a6e3a1\"> </span>'",
+        "return-type": "text",
+        "interval": 30,
+        "format": "{}",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+        "tooltip": false
+    },
     "custom/bluetooth": {
         "format": "<span color=\"#89b4fa\">󰂯  </span>",
         "interval": 30,
@@ -225,26 +238,25 @@
         "on-click": "blueberry",
         "tooltip": false
     },
-   
 
-"network": {
-    "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-icons": [
-        "<span color='#f38ba8'>   </span>",  // 0–25% - Catppuccin Red
-        "<span color='#f9e2af'>   </span>",  // 26–50% - Yellow
-        "<span color='#94e2d5'>   </span>",  // 51–75% - Teal
-        "<span color='#a6e3a1'>   </span>"   // 76–100% - Green
-    ],
-    "format-ethernet": "<span color=\"#a6e3a1\">     </span>",
-    "format-disconnected": "<span color=\"#f38ba8\">   Disconnected </span>",
-    "tooltip-format": " {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "    {essid}({signalStrength}%)",
-    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
-    "tooltip-format-disconnected": "Disconnected ",
-    "interval": 15,
-    "on-click": "nm-applet"
-},
+    "network": {
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-icons": [
+            "<span color='#f38ba8'>   </span>", // 0–25% - Catppuccin Red
+            "<span color='#f9e2af'>   </span>", // 26–50% - Yellow
+            "<span color='#94e2d5'>   </span>", // 51–75% - Teal
+            "<span color='#a6e3a1'>   </span>" // 76–100% - Green
+        ],
+        "format-ethernet": "<span color=\"#a6e3a1\">     </span>",
+        "format-disconnected": "<span color=\"#f38ba8\">   Disconnected </span>",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "    {essid}({signalStrength}%)",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-disconnected": "Disconnected ",
+        "interval": 15,
+        "on-click": "nm-applet"
+    },
 
     "custom/power": {
         "on-click": "wlogout -b 5",
@@ -252,100 +264,98 @@
         "rotate": 0,
         "tooltip": false
     },
-	"custom/swaync": {
-    "tooltip": false,
-    "format": "{icon}  ",
-    "format-icons": {
-        "notification": "<span color='#f9e2af'></span><span foreground='#f38ba8'><sup>  </sup></span>",               // Yellow bell + Red dot
-        "none": "<span color='#f9e2af'></span>",                                                                  // Yellow bell
-        "dnd-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup>  </sup></span>",       // Teal dnd + Red dot
-        "dnd-none": "<span color='#94e2d5'></span>",                                                              // Teal dnd
-        "inhibited-notification": "<span color='#a6e3a1'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Green bell + Red dot
-        "inhibited-none": "<span color='#a6e3a1'></span>",                                                        // Green bell
-        "dnd-inhibited-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Teal dnd + Red dot
-        "dnd-inhibited-none": "<span color='#94e2d5'></span>"
+    "custom/swaync": {
+        "tooltip": false,
+        "format": "{icon}  ",
+        "format-icons": {
+            "notification": "<span color='#f9e2af'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Yellow bell + Red dot
+            "none": "<span color='#f9e2af'></span>", // Yellow bell
+            "dnd-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Teal dnd + Red dot
+            "dnd-none": "<span color='#94e2d5'></span>", // Teal dnd
+            "inhibited-notification": "<span color='#a6e3a1'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Green bell + Red dot
+            "inhibited-none": "<span color='#a6e3a1'></span>", // Green bell
+            "dnd-inhibited-notification": "<span color='#94e2d5'></span><span foreground='#f38ba8'><sup>  </sup></span>", // Teal dnd + Red dot
+            "dnd-inhibited-none": "<span color='#94e2d5'></span>"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-},
 
-
-"custom/weather": {
-  // "exec": "wttrbar --nerd --custom-indicator {temp_C}°C{ICON}{FeelsLikeC} --location indore ",
-  "exec": "wttrbar --nerd --location indore ",
-  "return-type": "json",
-  "interval": 3600,
-  "tooltip": true,
-    "unit": "metric",
-  // "format": "{icon} {temperature}°C",
-  "format" : "{text}°C",
-  // "format": "{main_indicator} {temperature}°C • feels like {feels_like_c}°C",
-  "format-icons": {
-    "default": "",
-    "clear-night": "",
-    "cloudy": "",
-    "fog": "",
-    "heavy-rain": "",
-    "heavy-showers": "",
-    "heavy-snow": "",
-    "heavy-snow-showers": "",
-    "light-rain": "🌦",
-    "light-showers": "🌦",
-    "light-sleet": "",
-    "light-sleet-showers": "",
-    "light-snow": "",
-    "light-snow-showers": "",
-    "partly-cloudy": "",
-    "rain": "",
-    "showers": "🌦",
-    "sleet": "",
-    "snow": "",
-    "sunny": "",
-    "thundery-heavy-rain": "",
-    "thundery-showers": "",
-    "thundery-snow-showers": "",
-    "very-cloudy": ""
-  }
-}	
-,
+    "custom/weather": {
+        // "exec": "wttrbar --nerd --custom-indicator {temp_C}°C{ICON}{FeelsLikeC} --location indore ",
+        "exec": "wttrbar --nerd --location indore ",
+        "return-type": "json",
+        "interval": 3600,
+        "tooltip": true,
+        "unit": "metric",
+        // "format": "{icon} {temperature}°C",
+        "format": "{text}°C",
+        // "format": "{main_indicator} {temperature}°C • feels like {feels_like_c}°C",
+        "format-icons": {
+            "default": "",
+            "clear-night": "",
+            "cloudy": "",
+            "fog": "",
+            "heavy-rain": "",
+            "heavy-showers": "",
+            "heavy-snow": "",
+            "heavy-snow-showers": "",
+            "light-rain": "🌦",
+            "light-showers": "🌦",
+            "light-sleet": "",
+            "light-sleet-showers": "",
+            "light-snow": "",
+            "light-snow-showers": "",
+            "partly-cloudy": "",
+            "rain": "",
+            "showers": "🌦",
+            "sleet": "",
+            "snow": "",
+            "sunny": "",
+            "thundery-heavy-rain": "",
+            "thundery-showers": "",
+            "thundery-snow-showers": "",
+            "very-cloudy": ""
+        }
+    },
     //==> Other Modules
     ///////////////////////////////////////////////////////////////
     "custom/l_end": {
         "format": " ",
-        "interval" : "once",
+        "interval": "once",
         "tooltip": false
     },
 
     "custom/r_end": {
         "format": " ",
-        "interval" : "once",
+        "interval": "once",
         "tooltip": false
     },
 
     "custom/padd": {
         "format": "  ",
-        "interval" : "once",
+        "interval": "once",
         "tooltip": false
     },
 
     "custom/padd_bg": {
         "format": "  ",
-        "interval" : "once",
+        "interval": "once",
         "tooltip": false
     },
     "custom/clock_l_end": {
         "format": " ",
-        "interval" : "once",
+        "interval": "once",
         "tooltip": false
     },
 
     "custom/clock_r_end": {
         "format": " ",
-        "interval" : "once",
+        "interval": "once",
         "tooltip": false
-    },
+    }
 }
