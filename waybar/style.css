@@ -133,7 +133,13 @@ tooltip {
 #custom-l_end,
 #custom-r_end,
 #custom-clock_l_end,
-#custom-clock_r_end {
+#custom-clock_r_end,
+#custom-updates,
+#custom-music,
+#custom-cava,
+#custom-recorder,
+#custom-playerctl.prev,
+#custom-playerctl.next {
     color: @main-fg;
     background: @main-bg;
     opacity: 1;
@@ -250,4 +256,84 @@ padding: 0 5px;
    /*  } */
 #backlight, #battery, #pulseaudio{
   color:@main-fg
+}
+
+#custom-updates,
+#custom-music,
+#custom-cava,
+#custom-playerctl.prev,
+#custom-playerctl.next {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#custom-music {
+    font-size: 14px; /* Keeping text slightly smaller than icons for balance */
+}
+
+#custom-recorder {
+
+    padding-right: 12px;
+}
+
+#custom-playerctl.prev,
+#custom-playerctl.next {
+    color: @main-fg;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#custom-playerctl.prev:hover,
+#custom-playerctl.next:hover {
+    color: @wb-act-bg;
+}
+
+#custom-cava {
+    color: @wb-act-bg;
+}
+
+#custom-recorder.icon,
+#custom-recorder.timer,
+#custom-recorder.pause {
+    color: #ffffff;
+    opacity: 1;
+    margin: 4px 0px 4px 0px;
+    padding-left: 4px;
+    padding-right: 14px;
+}
+
+#custom-recorder.recording {
+    color: @wb-act-bg;
+    border-bottom: 2px solid @wb-act-bg;
+}
+
+#custom-recorder.pause:hover {
+    color: @wb-act-bg;
+}
+
+#custom-updates:hover,
+#custom-music:hover,
+#custom-recorder:hover {
+    background: @wb-hvr-bg;
+    color: @wb-hvr-fg;
+    transition: all 0.3s ease;
+}
+
+#custom-recorder.recording {
+    color: #eb4034;
+    border-bottom: 2px solid #eb4034;
+    background: alpha(#eb4034, 0.1);
+}
+
+#custom-recorder.paused {
+    color: #f9e2af;
+    border-bottom: 2px solid #f9e2af;
+    background: alpha(#f9e2af, 0.1);
+}
+
+@keyframes blink {    to {
+        background-color: #eb4034;
+        color: #ffffff;
+    }
 }

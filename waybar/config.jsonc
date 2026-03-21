@@ -11,13 +11,16 @@
     //==> Modules Layout
     "modules-left": [
         "custom/clock_l_end",
-        "tray",
-        "custom/clock_r_end",
-        "custom/clock_l_end",
         "hyprland/workspaces",
         "custom/clock_r_end",
         "custom/clock_l_end",
         "wlr/taskbar",
+        "custom/clock_r_end",
+        "custom/clock_l_end",
+        "custom/music",
+        "custom/playerctl#prev",
+        "custom/cava",
+        "custom/playerctl#next",
         "custom/clock_r_end"
     ],
     // "modules-left": [ "custom/clock_l_end","tray","custom/clock_r_end","custom/clock_l_end","hyprland/workspaces","custom/clock_r_end","custom/clock_l_end","wlr/taskbar","custom/clock_r_end","custom/music" ],
@@ -31,6 +34,7 @@
     "modules-right": [
         "custom/clock_l_end",
         "custom/weather",
+        "tray",
         "custom/clock_r_end",
         // "custom/l_end","custom/r_en
         "group/system-levels",
@@ -52,12 +56,40 @@
     "group/control-panel": {
         "orientation": "horizontal",
         "modules": [
+            "group/recorder",
             "idle_inhibitor",
             "custom/swaync",
             "custom/bluetooth",
             "network",
             "custom/power"
         ]
+    },
+    "group/recorder": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/recorder#icon",
+            "custom/recorder#timer",
+            "custom/recorder#pause"
+        ]
+    },
+    "custom/recorder#icon": {
+        "exec": "/home/catisgoal/.config/waybar/scripts/recorder/record-icon.sh",
+        "return-type": "json",
+        "interval": 1,
+        "on-click": "/home/catisgoal/.config/waybar/scripts/recorder/record-left-click.sh",
+        "on-click-right": "/home/catisgoal/.config/waybar/scripts/recorder/toggle-record.sh",
+        "on-click-middle": "/home/catisgoal/.config/waybar/scripts/recorder/record-delayed-screenshot.sh",
+        "tooltip": false
+    },    "custom/recorder#timer": {
+        "exec": "~/.config/waybar/scripts/recorder/record-timer.sh",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/recorder#pause": {
+        "exec": "~/.config/waybar/scripts/recorder/record-pause-icon.sh",
+        "interval": 1,
+        "on-click": "~/.config/waybar/scripts/recorder/pause-record.sh",
+        "tooltip": false
     },
 
     /* for wayybar music bar attemp2 */
@@ -252,10 +284,10 @@
         "format-disconnected": "<span color=\"#f38ba8\">   Disconnected </span>",
         "tooltip-format": " {ifname} via {gwaddri}",
         "tooltip-format-wifi": "    {essid}({signalStrength}%)",
-        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+        "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr}) ",
         "tooltip-format-disconnected": "Disconnected ",
         "interval": 15,
-        "on-click": "nm-applet"
+        "on-click": "nmgui"
     },
 
     "custom/power": {
@@ -357,5 +389,32 @@
         "format": " ",
         "interval": "once",
         "tooltip": false
+    },
+
+    "custom/music": {
+        "format": "{}",
+        "interval": 5,
+        "on-click": "playerctl play-pause",
+        "exec": "~/.config/waybar/scripts/music.sh"
+    },
+
+    "custom/playerctl#prev": {
+        "format": "{}",
+        "on-click": "playerctl previous",
+        "exec": "~/.config/waybar/scripts/player_prev.sh",
+        "tooltip": false
+    },
+
+    "custom/playerctl#next": {
+        "format": "{}",
+        "on-click": "playerctl next",
+        "exec": "~/.config/waybar/scripts/player_next.sh",
+        "tooltip": false
+    },
+
+    "custom/cava": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "on-click": "playerctl play-pause"
     }
 }
