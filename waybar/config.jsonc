@@ -67,27 +67,30 @@
     "group/recorder": {
         "orientation": "horizontal",
         "modules": [
-            "custom/recorder#icon",
+            "custom/recorder#start",
             "custom/recorder#timer",
             "custom/recorder#pause"
         ]
     },
-    "custom/recorder#icon": {
-        "exec": "/home/catisgoal/.config/waybar/scripts/recorder/record-icon.sh",
+    "custom/recorder#start": {
+        "exec": "echo '󰻂'",
+        "interval": "once",
+        "on-click": "~/.config/waybar/scripts/recorder/record-left-click.sh",
+        "on-click-right": "~/.config/waybar/scripts/recorder/toggle-record.sh",
+        "on-click-middle": "~/.config/waybar/scripts/recorder/record-delayed-screenshot.sh",
+        "tooltip": false
+    },
+    "custom/recorder#timer": {
+        "exec": "~/.config/waybar/scripts/recorder/recorder.sh",
         "return-type": "json",
         "interval": 1,
-        "on-click": "/home/catisgoal/.config/waybar/scripts/recorder/record-left-click.sh",
-        "on-click-right": "/home/catisgoal/.config/waybar/scripts/recorder/toggle-record.sh",
-        "on-click-middle": "/home/catisgoal/.config/waybar/scripts/recorder/record-delayed-screenshot.sh",
-        "tooltip": false
-    },    "custom/recorder#timer": {
-        "exec": "~/.config/waybar/scripts/recorder/record-timer.sh",
-        "interval": 1,
+        "exec-if": "pgrep -x wf-recorder",
         "tooltip": false
     },
     "custom/recorder#pause": {
-        "exec": "~/.config/waybar/scripts/recorder/record-pause-icon.sh",
+        "exec": "echo '󰏤'",
         "interval": 1,
+        "exec-if": "pgrep -x wf-recorder",
         "on-click": "~/.config/waybar/scripts/recorder/pause-record.sh",
         "tooltip": false
     },
@@ -147,6 +150,7 @@
 
     "clock": {
         "format": "{:%I:%M %p %a  %B·%d}", // replaced 󰃭 with  for better alignment
+        "on-click-right": "/home/catisgoal/.config/waybar/scripts/toggle-music-visibility.sh",
         // i dont want year anymore "format": " {:%I:%M %p %a  %B·%d·%Y}", // replaced 󰃭 with  for better alignment
         "rotate": 0,
         "format-alt": "{:%I:%M %p  %d·%m·%y}", // same change in alt format
@@ -395,6 +399,7 @@
         "format": "{}",
         "interval": 5,
         "on-click": "playerctl play-pause",
+        "on-click-right": "/home/catisgoal/.config/waybar/scripts/toggle-music-visibility.sh",
         "exec": "~/.config/waybar/scripts/music.sh"
     },
 
@@ -415,6 +420,7 @@
     "custom/cava": {
         "format": "{}",
         "exec": "~/.config/waybar/scripts/cava.sh",
-        "on-click": "playerctl play-pause"
+        "on-click": "playerctl play-pause",
+        "on-click-right": "/home/catisgoal/.config/waybar/scripts/toggle-music-visibility.sh"
     }
 }
