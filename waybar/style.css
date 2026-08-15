@@ -123,7 +123,8 @@ tooltip {
 #custom-recorder,
 #custom-playerctl.prev,
 #custom-playerctl.next,
-#custom-weather {
+#custom-weather,
+#custom-eyefocus {
     color: @main-fg;
     background: @main-bg;
     opacity: 1;
@@ -132,20 +133,11 @@ tooltip {
     padding-right: 4px;
 }
 
-
 #custom-weather {
     color: @main-fg;
     background: @main-bg;
     margin: 4px 0px 4px 0px;
     padding: 0px 6px;
-}
-
-#custom-eyefocus {
-    color: @main-fg;
-    background: transparent;
-    border: none;
-    margin: 0px 3px;
-    padding: 0px;
 }
 
 #idle_inhibitor{
