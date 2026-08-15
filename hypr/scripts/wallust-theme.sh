@@ -10,14 +10,12 @@ fi
 
 WALLUST_BIN=$(which wallust 2>/dev/null || echo "$HOME/.cargo/bin/wallust")
 
-# Ensure swww-daemon is running and update active wallpaper smoothly
-if command -v swww &>/dev/null; then
-    if ! pgrep -x swww-daemon >/dev/null; then
-        swww-daemon >/dev/null 2>&1 &
-        sleep 0.5
-    fi
-    swww img "$WALLPAPER" 2>/dev/null || true
-fi
+# Keep static fallback background in sync so reboot/hyprpaper never reverts
+cp -f "$WALLPAPER" "$HOME/.config/background.jpg" 2>/dev/null || true
+
+# Reload hyprpaper with the active wallpaper
+pkill -9 hyprpaper 2>/dev/null || true
+hyprpaper >/dev/null 2>&1 &
 
 # Run Wallust to extract color palette and generate template files
 if [ -x "$WALLUST_BIN" ]; then
