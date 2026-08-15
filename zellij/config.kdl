@@ -332,7 +332,7 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "everforest-dark"
+theme "onedark"
 
 // The name of the default layout to load on startup
 // Default: "default"

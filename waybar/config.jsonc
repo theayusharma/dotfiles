@@ -35,6 +35,7 @@
         "custom/clock_l_end",
         "custom/weather",
         "tray",
+        "custom/eyefocus",
         "custom/clock_r_end",
         // "custom/l_end","custom/r_en
         "group/system-levels",
@@ -118,6 +119,15 @@
         "icon-size": 18,
         "rotate": 0,
         "spacing": 5
+    },
+    "custom/eyefocus": {
+        "exec": "~/.config/waybar/scripts/eyefocus.sh status",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/eyefocus.sh toggle",
+        "on-click-right": "~/.config/waybar/scripts/eyefocus.sh web",
+        "interval": 2,
+        "tooltip": true,
+        "format": "{}"
     },
     "hyprland/workspaces": {
         "rotate": 0,
