@@ -19,9 +19,12 @@
 @define-color color15 {{color15}};
 
 @define-color bar-bg alpha({{background}}, 0.3);
-@define-color main-bg alpha({{background}}, 0.95);
+@define-color main-bg alpha({{background}}, 0.92);
 @define-color main-fg {{foreground}};
-@define-color wb-act-bg alpha({{color4}}, 0.85);
+@define-color wb-act-bg alpha({{color14}}, 0.9);
 @define-color wb-act-fg {{background}};
-@define-color wb-hvr-bg alpha({{color8}}, 0.5);
-@define-color wb-hvr-fg {{color14}};
+@define-color wb-act-color {{background}};
+@define-color wb-color {{foreground}};
+@define-color wb-hvr-bg alpha({{color13}}, 0.45);
+@define-color wb-hvr-fg {{foreground}};
+@define-color wb-hvr-color {{foreground}};
