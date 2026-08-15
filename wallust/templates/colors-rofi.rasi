@@ -1,6 +1,11 @@
 * {
     background: {{background}}E6;
+    background-alt: {{background}};
     foreground: {{foreground}};
+    foreground-alt: {{color15}};
+    selected: {{color14}};
+    active: {{color13}};
+    urgent: {{color1}};
     color0: {{color0}};
     color1: {{color1}};
     color2: {{color2}};
@@ -12,10 +17,10 @@
     color8: {{color8}};
     color9: {{color9}};
     color10: {{color10}};
-    color11: {{color11}};
+    color11: {{color14}};
     color12: {{color12}};
     color13: {{color13}};
     color14: {{color14}};
     color15: {{color15}};
-    accent: {{color4}};
+    accent: {{color14}};
 }
