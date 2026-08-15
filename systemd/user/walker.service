@@ -1,0 +1,14 @@
+[Unit]
+Description=Walker Application Runner Service
+After=graphical-session.target elephant.service
+Wants=elephant.service
+
+[Service]
+Type=simple
+Environment="PATH=/home/catisgoal/.local/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="XDG_DATA_DIRS=/usr/local/share:/usr/share:/home/catisgoal/.local/share"
+ExecStart=/home/catisgoal/.local/bin/walker --gapplication-service
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

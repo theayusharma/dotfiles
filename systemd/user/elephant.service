@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Elephant
+After=graphical-session.target
+
+[Service]
+Type=simple
+Environment="PATH=/home/catisgoal/.local/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="XDG_DATA_DIRS=/usr/local/share:/usr/share:/home/catisgoal/.local/share"
+ExecStart=/home/catisgoal/.local/bin/elephant
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
+							
