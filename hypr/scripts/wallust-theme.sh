@@ -13,6 +13,9 @@ WALLUST_BIN=$(which wallust 2>/dev/null || echo "$HOME/.cargo/bin/wallust")
 # Keep static fallback background in sync so reboot/hyprpaper never reverts
 cp -f "$WALLPAPER" "$HOME/.config/background.jpg" 2>/dev/null || true
 
+# Generate Black & White lockscreen wallpaper for hyprlock
+magick "$WALLPAPER" -colorspace Gray "$HOME/.config/hypr/lock_wallpaper_bw.png" 2>/dev/null || true
+
 # Reload hyprpaper with the active wallpaper
 pkill -9 hyprpaper 2>/dev/null || true
 hyprpaper >/dev/null 2>&1 &
