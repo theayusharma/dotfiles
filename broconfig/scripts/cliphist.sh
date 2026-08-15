@@ -6,7 +6,7 @@ mkdir -p "$tmp_dir"
 
 case "$1" in
 d)
-    cliphist list | rofi -dmenu -replace -config ~/.config/rofi/config-cliphist.rasi | cliphist delete
+    cliphist list | rofi -dmenu -p "" -replace -config ~/.config/rofi/config-cliphist.rasi | cliphist delete
     exit
     ;;
 w)
@@ -33,6 +33,6 @@ match(\$0, /^([0-9]+)\s(\[\[\s)?binary.*(jpg|jpeg|png|bmp)/, grp) {
 }
 1
 EOF
-selection=$(cliphist list | gawk "$prog" | rofi -dmenu -replace -display-columns 2 -show-icons -config ~/.config/rofi/config-cliphist.rasi)
+selection=$(cliphist list | gawk "$prog" | rofi -dmenu -p "" -replace -display-columns 2 -show-icons -config ~/.config/rofi/config-cliphist.rasi)
 [[ -n "$selection" ]] && cliphist decode <<<"$selection" | wl-copy
 

@@ -51,14 +51,11 @@ inputbar {
     border-radius:              10px;
     background-color:           @background-alt;
     text-color:                 @foreground;
-    children:                   [ "prompt", "entry" ];
+    children:                   [ "entry" ];
 }
 
 prompt {
-    enabled:                    true;
-    background-color:           transparent;
-    text-color:                 @selected;
-    font:                       "JetBrains Nerd Font Bold 11";
+    enabled:                    false;
 }
 
 entry {
