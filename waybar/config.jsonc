@@ -332,14 +332,11 @@
     },
 
     "custom/weather": {
-        // "exec": "wttrbar --nerd --custom-indicator {temp_C}°C{ICON}{FeelsLikeC} --location indore ",
-        "exec": "wttrbar --nerd --location indore ",
+        "exec": "python3 /home/catisgoal/.config/waybar/scripts/weather.py Indore",
         "return-type": "json",
-        "interval": 3600,
+        "interval": 1800,
         "tooltip": true,
-        "unit": "metric",
-        // "format": "{icon} {temperature}°C",
-        "format": "{text}°C",
+        "format": "{}",
         // "format": "{main_indicator} {temperature}°C • feels like {feels_like_c}°C",
         "format-icons": {
             "default": "",

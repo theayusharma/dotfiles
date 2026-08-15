@@ -1,0 +1,12 @@
+# wallust.toml - Wallust v3 Configuration
+
+backend = "resized"
+color_space = "lab"
+palette = "dark16"
+
+[templates]
+waybar = { template = "colors-waybar.css", target = "~/.cache/wallust/colors-waybar.css" }
+swaync = { template = "colors-swaync.css", target = "~/.cache/wallust/colors-swaync.css" }
+rofi = { template = "colors-rofi.rasi", target = "~/.cache/wallust/colors-rofi.rasi" }
+kitty = { template = "colors-kitty.conf", target = "~/.cache/wallust/colors-kitty.conf" }
+hyprland = { template = "colors-hyprland.conf", target = "~/.cache/wallust/colors-hyprland.conf" }

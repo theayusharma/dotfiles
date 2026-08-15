@@ -6,6 +6,7 @@
 !kitty/
 !rofi/
 !waybar/
+!waybar/scripts/weather.py
 !wlogout/
 !wofi/
 !niri/

@@ -1,0 +1,6 @@
+@define-color background {{background}};
+@define-color background-alpha rgba({{background | rgb}}, 0.85);
+@define-color foreground {{foreground}};
+@define-color accent {{color4}};
+@define-color current-line {{color8}};
+@define-color comment {{color7}};

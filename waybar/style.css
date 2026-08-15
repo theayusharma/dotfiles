@@ -139,7 +139,9 @@ tooltip {
 #custom-cava,
 #custom-recorder,
 #custom-playerctl.prev,
-#custom-playerctl.next {
+#custom-playerctl.next,
+#custom-weather,
+#custom-eyefocus {
     color: @main-fg;
     background: @main-bg;
     opacity: 1;
@@ -152,10 +154,15 @@ tooltip {
 #custom-weather {
     color: @main-fg;
     background: @main-bg;
-    font-family: "JetBrains Nerd Font",monospace;
-    font-size: 16px;
-    padding:0px;
     margin: 4px 0px 4px 0px;
+    padding: 0px 6px;
+}
+
+#custom-eyefocus {
+    color: @main-fg;
+    background: @main-bg;
+    margin: 4px 0px 4px 0px;
+    padding: 0px 6px;
 }
 
 #idle_inhibitor{
