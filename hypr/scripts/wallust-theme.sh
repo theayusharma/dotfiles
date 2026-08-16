@@ -18,7 +18,7 @@ magick "$WALLPAPER" -colorspace Gray "$HOME/.config/hypr/lock_wallpaper_bw.png" 
 
 # Reload hyprpaper with the active wallpaper
 pkill -9 hyprpaper 2>/dev/null || true
-hyprpaper >/dev/null 2>&1 &
+hyprpaper >/dev/null 2>&1 & disown
 
 # Run Wallust to extract color palette and generate template files
 if [ -x "$WALLUST_BIN" ]; then

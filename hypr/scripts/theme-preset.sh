@@ -77,7 +77,9 @@ function load_preset() {
     fi
 
     if [ -n "$WP_PATH" ] && [ -f "$WP_PATH" ]; then
-        if command -v waypaper &>/dev/null; then
+        if [ -x "$HOME/.config/hypr/scripts/wallust-theme.sh" ]; then
+            "$HOME/.config/hypr/scripts/wallust-theme.sh" "$WP_PATH"
+        elif command -v waypaper &>/dev/null; then
             waypaper --wallpaper "$WP_PATH" 2>/dev/null || true
         elif command -v swww &>/dev/null; then
             swww img "$WP_PATH" 2>/dev/null || true
