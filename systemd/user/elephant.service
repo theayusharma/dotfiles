@@ -5,8 +5,10 @@ After=graphical-session.target
 
 [Service]
 Type=simple
+PassEnvironment=WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_RUNTIME_DIR HYPRLAND_INSTANCE_SIGNATURE
 Environment="PATH=/home/catisgoal/.local/bin:/usr/local/bin:/usr/bin:/bin"
 Environment="XDG_DATA_DIRS=/usr/local/share:/usr/share:/home/catisgoal/.local/share"
+Environment="ELEPHANT_PROVIDER_DIR=/home/catisgoal/.local/lib/elephant"
 ExecStart=/home/catisgoal/.local/bin/elephant
 Restart=on-failure
 
